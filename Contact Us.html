@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us | The Central Post</title>
+	<link rel="shortcut icon" href="favicon.ico" type="favicon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./stylesheet.css" rel="stylesheet" type="text/css"></link>
+  	<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Martel:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">  
+    <h1 class="logo"><a href="./HomePage.html"> The Central Post </a></h1>
+      <nav id="navigation">  
+        <a href="./Markets.html">Business</a>
+        <a href="./Politics.html">Politics</a>
+        <a href="./Sports.html">Sports</a>
+       </nav>
+    </div>
+    <div>
+	  <h2 class="head">Contact</h2>
+	</div>
+  <p class="description">The Central Post welcomes all kinds of feedback to produce the best quality of content. If you have any comments, questions,
+  or suggestions, please fill out the contact request form below and a representative will respond promptly.</p>
+<?php
+$action=$_REQUEST['action'];
+if ($action=="") /** display the contact form */
+{
+?>
+  <form action="" method="POST">
+    <h1>Contact Request Form</h1>
+    <label for="FirstName">First Name</label>
+      <input type="text" name="FirstName" required><br>
+    <label for="LastName">Last Name</label>
+      <input type="text" name="LastName" required><br>
+    <label for="Email">Email</label>
+      <input type="text" name="Email" required><br>
+    <label for="comment" required>Comment</label>
+      <textarea rows="10" cols="30" name="comment" placeholder="Please be as detailed as possible..."></textarea><br>
+      <input type="submit" name="submit">
+  </form>
+  <?php
+}
+else/* send the submitted data */
+}
+$FirstName=$_REQUEST['FirstName'];
+$LastName=$_REQUEST['LastName']
+$Email=$_REQUEST['Email'];
+$comment=$_REQUEST['comment'];
+if (($FirstName=="")||($LastName=="")||($Email=="")||($comment==""))
+{
+echo "All fields are required, please fill <a href=\"\">the form</a> again.";  
+}
+else
+$from="From: $FirstName\r\nReturn-path: $Email";
+$subject="Message sent using your contact form";
+mail("tonyhemphill63@gmail.com", $subject, $comment, $from);
+echo "Message sent!";
+}
+}
+?>
+
+  	<div class="footer">
+	<nav>
+    <a href="./About Us.html" class="footer">About Us</a>
+    <a href="./Contact Us.html" class="footer">Contact Us</a>
+    <a href="./learn more.html" class="footer">Learn More</a>
+  </nav>
+  </div>
+</body>
+</html>

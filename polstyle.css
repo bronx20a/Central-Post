@@ -1,0 +1,306 @@
+
+
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+   font-family: 'Martel', serif;
+    margin: 0;
+  	width: 100%;
+	height: 100%;
+    padding: 0;
+}
+
+body {
+  background-color: hsl(.03, 2%, 85%);
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+a {
+text-decoration: none;
+color: black;
+}
+.header {
+grid-area: header;
+display: block;
+}
+.logo {
+grid-area: header;
+color: black;
+font-size: 65px;
+font-family: 'Grenze Gotisch', cursive;
+text-align: center;
+padding: 10px 10px 05px 10px;
+}
+.logo a {
+color: black;
+font-size: 65px;
+font-family: 'Grenze Gotisch', cursive;
+text-align: center;
+padding: 10px 10px 05px 10px;
+}
+#navigation {
+position: relative;
+grid-area: nav;
+min-width: 500px;
+max-width: 2150px;
+text-align: center;
+color: black;
+font-family: 'Martel', serif;
+font-size: 20px;
+border: 1px solid #95A3B5;
+border-left: 0px;
+border-right: 0px;
+}
+#navigation a {
+border: 0px;
+margin: 0px;
+padding: 0px 10px 0px 10px;
+color: black;
+transition: background-color 800ms 500ms ease-out;
+}
+#navigation a:hover {
+background-color: grey;
+}
+.body {
+min-height: 960px;
+min-width: 960px;
+max-width: 2160px;
+max-height: 2160px;
+justify-items: stretch;
+align-items: stretch;
+}
+.title {
+  grid-area: title;
+  text-align: center;
+  font-weight: 200;
+  font-size: 35px;
+}
+.ad {
+  grid-area: ad;
+  text-align: center;
+}
+.trending {
+  grid-area: trending;
+  font-size: 30px;
+  text-align: center;
+}
+.trending li a:hover {
+text-decoration: underline;
+}
+#description {
+position: relative;
+top: 50px;
+font-size: 20px;
+text-align: left;
+}
+.image {
+height: 180px;
+width: 100%;
+border-radius: 10%;
+padding-right: 30px;
+}
+.cards {
+display: grid;
+min-height: 960px;
+max-height: 2160px;
+min-width: 960px;
+max-width: 2160px;
+grid-template-columns: 40% 40% 20%;
+grid-template-rows: 10% 30% 30% 30%;
+grid-row-gap: 20px;
+grid-template-areas: 		   "title title title"
+					           "article1 article2 ad"
+					           "article3 article4 trending"
+					           "article5 article6 trending"
+					           "footer footer footer"; 
+    width: 100%;
+    justify-content: center;
+    -webkit-justify-content: center;
+	padding-left: 20px;
+}
+@media screen and (max-width: 1000px) {
+.cards {
+display: grid;
+grid-template-columns: 100%; 
+grid-template-rows: 1fr;
+grid-row-gap: 40px;
+grid-template-areas: "title"
+					"article1"
+					"article2"
+					"article3"
+					"article4"
+					"article5"
+					"article6"
+					"ad"
+					"ad"
+					"trending"
+					"trending"
+					"footer";
+}
+.card {
+text-align: center;
+width: 50%;
+margin-left: 85px;
+}
+
+.image {
+width: 50%;
+clear: left;
+}
+.trending {
+font-size: 35px;
+}
+.footer {
+text-align: center;
+}
+}
+.card--1 {
+  grid-area: article1;
+}
+.card--2 {
+  grid-area: article2;
+}
+.card--3 {
+  grid-area: article3;
+}
+.card--4 {
+  grid-area: article4;
+}
+.card--5 {
+  grid-area: article5;
+}
+.card--6 {
+  grid-area: article6;
+}
+.card--1 .card__img, .card--1 .card__img--hover {
+    background-image: url('https://news.colgate.edu/magazine/wp-content/uploads/sites/6/2018/10/maroon-rbg.jpg');
+}
+
+.card--2 .card__img, .card--2 .card__img--hover {
+    background-image: url('https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production+Library/11-08-2020-UNICEF-Beirut-explosion.jpg/image1170x530cropped.jpg');
+}
+.card--3 .card__img, .card--3 .card__img--hover {
+    background-image: url('https://static.politico.com/dims4/default/3445b6e/2147483647/resize/1160x%3E/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Ff4%2F88%2F5abb9f8b40cba4f477bffe414d2c%2Fap20274045911341.jpg');
+}
+.card--4 .card__img, .card--4 .card__img--hover {
+    background-image: url('https://d279m997dpfwgl.cloudfront.net/wp/2020/07/GettyImages-1190598560-1000x655.jpg');
+}
+.card--5 .card__img, .card--5 .card__img--hover {
+    background-image: url('https://msmagazine.com/wp-content/uploads/2020/12/covid-cancer.jpg');
+}
+.card--6 .card__img, .card--6 .card__img--hover {
+    background-image: url('https://www.atlanticcouncil.org/wp-content/uploads/2020/09/2020-09-05T191349Z_1426578869_RC2HSI9I4PPE_RTRMADP_3_BELARUS-ELECTION-PROTESTS-scaled-e1599584335379.jpg');
+}
+
+
+.card__img {
+  visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+  
+}
+
+.card__info-hover {
+    position: absolute;
+    padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+}
+
+.card__img--hover {
+  transition: 0.2s all ease-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+  position: absolute;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+top: 0;
+  
+}
+.card {
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  width: 80%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+}
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
+
+.card__info {
+z-index: 2;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+border-bottom-right-radius: 12px;
+   padding: 16px 24px 24px 24px;
+}
+
+.card__title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Martel', serif;
+}
+
+.card__by {
+    font-size: 12px;
+    font-family: 'Martel', sans-serif;
+    font-weight: 500;
+}
+
+.card__author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #AD7D52;
+}
+
+.card:hover .card__img--hover {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.card:hover .card__info {
+    background-color: transparent;
+    position: relative;
+}
+
+.card:hover .card__info-hover {
+    opacity: 1;
+}
+.footer {
+grid-area: footer;
+border-top: 1px solid #95A3B5;
+padding: 20px;
+margin-top: 100px;
+margin-bottom: 0px;
+margin-left: 10px;
+margin-right: 10px;
+position: relative;
+clear: all;
+}
+.footer a {
+border-top: 0px;
+color: black;
+margin: 10px;
+padding: 10px;
+font-size: 15px;
+}
+.footer a:hover {
+text-decoration: underline;
+}

@@ -1,0 +1,8 @@
+body {
+background-color: hsl(.03, 2%, 85%);
+}
+h1 {
+color: black;
+font-size: 65px;
+font-family: 'Grenze Gotisch', cursive;
+}
