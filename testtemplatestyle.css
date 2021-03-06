@@ -103,6 +103,7 @@ color: grey;
 text-align: center;
 width: 75%;
 }
+
 .trending {
 grid-area: trending;
 width: 75%;
@@ -162,6 +163,19 @@ width: 90%;
 .articletitle, .articleimage, .articlebody, .author, .source {
 padding-left: 20px;
 margin-right: 0px;
+}.ad {
+	width: 100%;
+}
+.trending {
+	margin: 0 auto;
+	width: 90%;
+}
+#trending-title {
+	margin-bottom: 10px;
+}
+.image {
+	height: 10% !important;
+	border-radius: 20% !important;
 }
 .logo a {
 padding: 0px;
@@ -206,6 +220,17 @@ padding: 15px;
 }
 }
 @media only screen and (min-width: 700px) and (max-width: 1024px) {
+		.trending {
+		margin: 0 auto;
+		width: 85%;
+	}
+	.trending li {
+		font-size: 30px;
+	}
+	#trending-title {
+		margin-bottom: 10px;
+		font-size: 40px;
+	}
 .articleimage {
 width: 80%;
 }
@@ -215,6 +240,7 @@ margin-top: -30px;
 .articletitle {
 font-size: 40px;
 }
+.trending
 }
 @media only screen and (min-width: 1025px) and (max-width: 1366px) {
 }
